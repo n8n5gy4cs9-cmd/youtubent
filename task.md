@@ -4,14 +4,14 @@
 - [x] T00 PRD.md, PRD.json, task.md written
 
 ## Phase 1 — Core (no Qt)
-- [ ] T01 Project scaffold, requirements.txt, .gitignore
-- [ ] T02 models.py + time format/parse + project save/load
-- [ ] T03 urls.py (video id parsing)
-- [ ] T04 points.py (even / random generation)
-- [ ] T05 downloader.py (yt-dlp info + download)
-- [ ] T06 frames.py (ffmpeg frame grab)
-- [ ] T07 storyboard.py (grid compose, captions, timestamps, PNG/JPG/PDF)
-- [ ] T08 captions.py + settings.py
+- [x] T01 Project scaffold, requirements.txt, .gitignore
+- [x] T02 models.py + time format/parse + project save/load
+- [x] T03 urls.py (video id parsing)
+- [x] T04 points.py (even / random generation)
+- [x] T05 downloader.py (yt-dlp info + download)
+- [x] T06 frames.py (ffmpeg frame grab)
+- [x] T07 storyboard.py (grid compose, captions, timestamps, PNG/JPG/PDF)
+- [x] T08 captions.py + settings.py
 
 ## Phase 2 — Sprites
 - [ ] T09 tools/make_sprites.py generates all icons, app icon, spinner, illustrations

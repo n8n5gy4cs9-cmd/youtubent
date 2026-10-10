@@ -77,42 +77,42 @@
     {
       "id": "T01",
       "title": "Project scaffold, requirements.txt, .gitignore",
-      "done": false
+      "done": true
     },
     {
       "id": "T02",
       "title": "models.py + time format/parse + project save/load",
-      "done": false
+      "done": true
     },
     {
       "id": "T03",
       "title": "urls.py (video id parsing)",
-      "done": false
+      "done": true
     },
     {
       "id": "T04",
       "title": "points.py (even / random generation)",
-      "done": false
+      "done": true
     },
     {
       "id": "T05",
       "title": "downloader.py (yt-dlp info + download)",
-      "done": false
+      "done": true
     },
     {
       "id": "T06",
       "title": "frames.py (ffmpeg frame grab)",
-      "done": false
+      "done": true
     },
     {
       "id": "T07",
       "title": "storyboard.py (grid compose, captions, timestamps, PNG/JPG/PDF)",
-      "done": false
+      "done": true
     },
     {
       "id": "T08",
       "title": "captions.py + settings.py",
-      "done": false
+      "done": true
     },
     {
       "id": "T09",
