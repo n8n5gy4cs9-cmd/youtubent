@@ -1,6 +1,7 @@
 """yt-dlp wrapper: fetch video info and download a small video-only copy for frame grabbing."""
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
@@ -58,6 +59,14 @@ def fetch(url: str, progress: Callable[[float, str], None] | None = None) -> Vid
         "retries": 3,
     }
     cached = _find_cached(vid)
+    meta = settings.cache_dir() / f"{vid}.json"
+    if cached and meta.exists():  # works offline
+        try:
+            m = json.loads(meta.read_text())
+            progress(1.0, "Loaded from cache")
+            return VideoInfo(vid, m["title"], m["duration"], m["width"], m["height"], cached)
+        except Exception:
+            pass
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             progress(0.0, "Asking YouTube nicely…")
@@ -69,7 +78,7 @@ def fetch(url: str, progress: Callable[[float, str], None] | None = None) -> Vid
     if path is None:
         raise DownloadError("Download finished but the file is missing.")
     progress(1.0, "Got it!")
-    return VideoInfo(
+    vi = VideoInfo(
         video_id=vid,
         title=info.get("title") or vid,
         duration=float(info.get("duration") or 0),
@@ -77,6 +86,8 @@ def fetch(url: str, progress: Callable[[float, str], None] | None = None) -> Vid
         height=int(info.get("height") or 9),
         path=path,
     )
+    meta.write_text(json.dumps({"title": vi.title, "duration": vi.duration, "width": vi.width, "height": vi.height}))
+    return vi
 
 
 def _friendly(e: Exception) -> str:

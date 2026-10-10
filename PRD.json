@@ -123,47 +123,47 @@
     {
       "id": "T10",
       "title": "theme.py (dark QSS + icon loader)",
-      "done": false
+      "done": true
     },
     {
       "id": "T11",
       "title": "workers.py",
-      "done": false
+      "done": true
     },
     {
       "id": "T12",
       "title": "preview.py",
-      "done": false
+      "done": true
     },
     {
       "id": "T13",
       "title": "timeline.py (draggable markers)",
-      "done": false
+      "done": true
     },
     {
       "id": "T14",
       "title": "gallery.py (reorder/remove/include)",
-      "done": false
+      "done": true
     },
     {
       "id": "T15",
       "title": "side_panels.py (Point + Export panels)",
-      "done": false
+      "done": true
     },
     {
       "id": "T16",
       "title": "main_window.py wiring, shortcuts, status bar, project open/save, autosave",
-      "done": false
+      "done": true
     },
     {
       "id": "T17",
       "title": "app.py entry + `python -m youtubent`",
-      "done": false
+      "done": true
     },
     {
       "id": "T18",
       "title": "pytest tests (core + offscreen UI smoke)",
-      "done": false
+      "done": true
     },
     {
       "id": "T19",

@@ -17,17 +17,17 @@
 - [x] T09 tools/make_sprites.py generates all icons, app icon, spinner, illustrations
 
 ## Phase 3 — UI
-- [ ] T10 theme.py (dark QSS + icon loader)
-- [ ] T11 workers.py
-- [ ] T12 preview.py
-- [ ] T13 timeline.py (draggable markers)
-- [ ] T14 gallery.py (reorder/remove/include)
-- [ ] T15 side_panels.py (Point + Export panels)
-- [ ] T16 main_window.py wiring, shortcuts, status bar, project open/save, autosave
-- [ ] T17 app.py entry + `python -m youtubent`
+- [x] T10 theme.py (dark QSS + icon loader)
+- [x] T11 workers.py
+- [x] T12 preview.py
+- [x] T13 timeline.py (draggable markers)
+- [x] T14 gallery.py (reorder/remove/include)
+- [x] T15 side_panels.py (Point + Export panels)
+- [x] T16 main_window.py wiring, shortcuts, status bar, project open/save, autosave
+- [x] T17 app.py entry + `python -m youtubent`
 
 ## Phase 4 — Ship
-- [ ] T18 pytest tests (core + offscreen UI smoke)
+- [x] T18 pytest tests (core + offscreen UI smoke)
 - [ ] T19 guide.html
 - [ ] T20 PyInstaller spec + build_mac.sh
 - [ ] T21 README, final PRD.json/task.md sync
