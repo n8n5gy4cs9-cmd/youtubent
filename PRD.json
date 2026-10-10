@@ -1,0 +1,183 @@
+{
+  "name": "Youtuben't",
+  "summary": "Desktop app: YouTube URL -> editable screenshot timeline -> funny storyboard (PNG/JPG/PDF).",
+  "platforms": {
+    "now": [
+      "macOS arm64"
+    ],
+    "later": [
+      "windows",
+      "linux"
+    ]
+  },
+  "stack": {
+    "python": "3.14 (3.13 ok)",
+    "gui": "PySide6",
+    "packaging": "PyInstaller",
+    "tests": "pytest",
+    "added": [
+      "yt-dlp",
+      "imageio-ffmpeg",
+      "Pillow"
+    ],
+    "dropped_from_template": [
+      "playwright",
+      "httpx",
+      "selectolax"
+    ]
+  },
+  "rules": [
+    "core/ has no Qt imports",
+    "keep simple, no over-engineering",
+    "update task.md and PRD.json after every task",
+    "commit every task"
+  ],
+  "features": [
+    "video import",
+    "auto points even/random",
+    "timeline editor",
+    "frame preview",
+    "gallery reorder/remove",
+    "storyboard grid",
+    "captions+timestamps",
+    "export png/jpg/pdf",
+    "project save/load",
+    "shorts support"
+  ],
+  "modules": {
+    "core": [
+      "models",
+      "urls",
+      "downloader",
+      "frames",
+      "points",
+      "storyboard",
+      "captions",
+      "settings"
+    ],
+    "ui": [
+      "theme",
+      "main_window",
+      "preview",
+      "timeline",
+      "gallery",
+      "side_panels",
+      "workers"
+    ],
+    "tools": [
+      "make_sprites"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "T00",
+      "title": "PRD.md, PRD.json, task.md written",
+      "done": true
+    },
+    {
+      "id": "T01",
+      "title": "Project scaffold, requirements.txt, .gitignore",
+      "done": false
+    },
+    {
+      "id": "T02",
+      "title": "models.py + time format/parse + project save/load",
+      "done": false
+    },
+    {
+      "id": "T03",
+      "title": "urls.py (video id parsing)",
+      "done": false
+    },
+    {
+      "id": "T04",
+      "title": "points.py (even / random generation)",
+      "done": false
+    },
+    {
+      "id": "T05",
+      "title": "downloader.py (yt-dlp info + download)",
+      "done": false
+    },
+    {
+      "id": "T06",
+      "title": "frames.py (ffmpeg frame grab)",
+      "done": false
+    },
+    {
+      "id": "T07",
+      "title": "storyboard.py (grid compose, captions, timestamps, PNG/JPG/PDF)",
+      "done": false
+    },
+    {
+      "id": "T08",
+      "title": "captions.py + settings.py",
+      "done": false
+    },
+    {
+      "id": "T09",
+      "title": "tools/make_sprites.py generates all icons, app icon, spinner, illustrations",
+      "done": false
+    },
+    {
+      "id": "T10",
+      "title": "theme.py (dark QSS + icon loader)",
+      "done": false
+    },
+    {
+      "id": "T11",
+      "title": "workers.py",
+      "done": false
+    },
+    {
+      "id": "T12",
+      "title": "preview.py",
+      "done": false
+    },
+    {
+      "id": "T13",
+      "title": "timeline.py (draggable markers)",
+      "done": false
+    },
+    {
+      "id": "T14",
+      "title": "gallery.py (reorder/remove/include)",
+      "done": false
+    },
+    {
+      "id": "T15",
+      "title": "side_panels.py (Point + Export panels)",
+      "done": false
+    },
+    {
+      "id": "T16",
+      "title": "main_window.py wiring, shortcuts, status bar, project open/save, autosave",
+      "done": false
+    },
+    {
+      "id": "T17",
+      "title": "app.py entry + `python -m youtubent`",
+      "done": false
+    },
+    {
+      "id": "T18",
+      "title": "pytest tests (core + offscreen UI smoke)",
+      "done": false
+    },
+    {
+      "id": "T19",
+      "title": "guide.html",
+      "done": false
+    },
+    {
+      "id": "T20",
+      "title": "PyInstaller spec + build_mac.sh",
+      "done": false
+    },
+    {
+      "id": "T21",
+      "title": "README, final PRD.json/task.md sync",
+      "done": false
+    }
+  ]
+}
