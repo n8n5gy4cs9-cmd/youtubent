@@ -4,7 +4,7 @@ Turn a YouTube video or Short into screenshots / a funny storyboard without watc
 See `guide.html` for usage, `PRD.md` for the plan, `task.md` for progress.
 
 ```
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate   # after activating, `python` works
 pip install -r requirements.txt
 python -m youtubent
 ```
