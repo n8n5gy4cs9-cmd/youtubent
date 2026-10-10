@@ -74,3 +74,16 @@ def test_grab_and_storyboard(video, tmp_path):
     assert Image.open(tmp_path / "o.png").width > 3 * 480
     pr.points[0].include = False
     assert storyboard.render(pr, fr).height > 0
+
+
+def test_export_modes(video, tmp_path):
+    from youtubent.core import export as ex
+    pr = Project(title="My Super Long Video Title!!", duration=5, points=[Point(t, "c") for t in (0.5, 1.5, 2.5)])
+    fr = {p.id: frames.grab_frame(video, p.t) for p in pr.points}
+    assert ex.short_name(pr) == "my_super_long_video_titl"
+    out = ex.export(pr, fr, tmp_path / "f")
+    assert [p.name for p in out] == [f"my_super_long_video_titl_00{i}.png" for i in (1, 2, 3)]
+    pr.export.mode = "storyboard_pdf"
+    assert ex.export(pr, fr, tmp_path / "s.pdf")[0].suffix == ".pdf"
+    pr.export.mode = "storyboard_png"
+    assert ex.suggested_name(pr).endswith(".png")

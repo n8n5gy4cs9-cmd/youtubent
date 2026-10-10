@@ -69,7 +69,8 @@ class ExportSettings:
     show_title: bool = True
     show_timestamps: bool = True
     show_captions: bool = True
-    format: str = "png"  # png | jpg | pdf
+    mode: str = "frames"  # frames (separate PNGs, default) | storyboard_png | storyboard_pdf
+    frame_width: int = 1280  # width of separate PNG frames (0 = original size)
 
 
 @dataclass

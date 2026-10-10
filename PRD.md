@@ -25,6 +25,16 @@ Personal fun project. **Keep it simple. No over-engineering. It just works and i
 
 Stack items from the template not needed here (playwright, httpx, selectolax) are intentionally left out.
 
+## 3b. Main flow (same for videos and Shorts)
+1. Paste URL → Load video.
+2. Generate points (random or evenly spaced).
+3. Preview frames; move timestamps, add new points, delete unwanted ones.
+4. Pick what to export. **Default = separate PNG frames, no storyboard.** Storyboard is only built when the user picks a storyboard mode.
+5. Export:
+   - **Separate PNG frames (default):** a folder of numbered files `<shortname>_001.png`, `_002.png`… (shortname = slug of title, ≤24 chars).
+   - **Storyboard PDF:** stylized storyboard (grid, title, timestamps, captions) — automatic default layout, tweakable.
+   - **Storyboard PNG:** same stylized storyboard as one image.
+
 ## 4. Features (MVP = all of these)
 1. **Video import** — paste URL (watch / youtu.be / shorts / embed) → load. Shows title + duration, downloads a small preview copy into a cache dir.
 2. **Automatic points** — settings: count N, mode `even` | `random`. Even = centered in N equal slices. Random = one random time per slice (still chronological). Re-generate any time.
@@ -33,7 +43,7 @@ Stack items from the template not needed here (playwright, httpx, selectolax) ar
 5. **Gallery** — thumbnail strip/grid of all points; click = select, drag = reorder (display order), ✕ = remove, checkbox = include in storyboard.
 6. **Storyboard generator** — chronological grid (columns 1–6), cell size, gap, theme (dark/light/…), title header, optional timestamp badges, per-frame captions + a "funny commentary" caption box.
 7. **Captions** — per point: caption text (editable in side panel and in gallery). Optional random "joke caption" button using a built-in list of silly captions (offline, no AI).
-8. **Export** — PNG, JPG, PDF. Copy to clipboard. Save-as dialog. "Reveal in Finder".
+8. **Export** — modes: separate numbered PNGs (default) / storyboard PNG / storyboard PDF (`core/export.py`). Copy storyboard to clipboard. Reveal in Finder.
 9. **Project save/load** — `.ytb` JSON file (url, points, captions, settings). Autosave last session.
 10. **Shorts** — vertical videos work (cells adapt to aspect ratio).
 
@@ -66,7 +76,8 @@ youtubent/
     downloader.py        yt-dlp wrapper (info + download low-res mp4)
     frames.py            ffmpeg frame grab -> PIL.Image
     points.py            even/random generation, helpers (clamp, sort, format/parse time)
-    storyboard.py        Pillow compose + export png/jpg/pdf
+    storyboard.py        Pillow compose + save png/jpg/pdf
+    export.py            export modes (frames / storyboard png / pdf), file naming
     captions.py          silly caption list
     settings.py          QSettings-free tiny json settings in user dir
   ui/

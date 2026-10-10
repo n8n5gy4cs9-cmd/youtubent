@@ -14,7 +14,7 @@
 - [x] T08 captions.py + settings.py
 
 ## Phase 2 — Sprites
-- [ ] T09 tools/make_sprites.py generates all icons, app icon, spinner, illustrations
+- [x] T09 tools/make_sprites.py generates all icons, app icon, spinner, illustrations
 
 ## Phase 3 — UI
 - [ ] T10 theme.py (dark QSS + icon loader)
