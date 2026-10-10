@@ -168,17 +168,17 @@
     {
       "id": "T19",
       "title": "guide.html",
-      "done": false
+      "done": true
     },
     {
       "id": "T20",
       "title": "PyInstaller spec + build_mac.sh",
-      "done": false
+      "done": true
     },
     {
       "id": "T21",
       "title": "README, final PRD.json/task.md sync",
-      "done": false
+      "done": true
     }
   ],
   "main_flow": [

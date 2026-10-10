@@ -40,7 +40,7 @@ Stack items from the template not needed here (playwright, httpx, selectolax) ar
 2. **Automatic points** — settings: count N, mode `even` | `random`. Even = centered in N equal slices. Random = one random time per slice (still chronological). Re-generate any time.
 3. **Timeline editor** — horizontal timeline with draggable markers, exact timestamps, add (at playhead / at clicked place), delete, nudge ±0.1s/±1s, type an exact time `mm:ss.s`.
 4. **Frame preview** — large preview of selected point; changing the time updates the frame (debounced). Frame scrubbing slider.
-5. **Gallery** — thumbnail strip/grid of all points; click = select, drag = reorder (display order), ✕ = remove, checkbox = include in storyboard.
+5. **Gallery** — thumbnail strip/grid of all points; click = select, Delete = remove, checkbox = include in export. (Gallery is always chronological, so no manual reorder — decided during build.)
 6. **Storyboard generator** — chronological grid (columns 1–6), cell size, gap, theme (dark/light/…), title header, optional timestamp badges, per-frame captions + a "funny commentary" caption box.
 7. **Captions** — per point: caption text (editable in side panel and in gallery). Optional random "joke caption" button using a built-in list of silly captions (offline, no AI).
 8. **Export** — modes: separate numbered PNGs (default) / storyboard PNG / storyboard PDF (`core/export.py`). Copy storyboard to clipboard. Reveal in Finder.
@@ -106,3 +106,6 @@ No accounts, no cloud, no AI summarizing, no video playback/audio, no playlist s
 
 ## 10. Legal note
 Personal use only. Respect YouTube ToS / copyright when sharing.
+
+## 11. Status
+MVP implemented (see `task.md`). Verified with pytest + offscreen UI smoke test using a local fake video; real YouTube download via yt-dlp is untested in the dev sandbox (no network) — test on the Mac first. Possible next ideas: Windows build, drag-to-reorder custom story order, clipboard copy, per-frame crop.

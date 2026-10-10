@@ -28,6 +28,6 @@
 
 ## Phase 4 — Ship
 - [x] T18 pytest tests (core + offscreen UI smoke)
-- [ ] T19 guide.html
-- [ ] T20 PyInstaller spec + build_mac.sh
-- [ ] T21 README, final PRD.json/task.md sync
+- [x] T19 guide.html
+- [x] T20 PyInstaller spec + build_mac.sh
+- [x] T21 README, final PRD.json/task.md sync
