@@ -9,3 +9,14 @@ pip install -r requirements.txt
 python -m youtubent
 ```
 Build the Mac app: `./build_mac.sh`. Tests: `python -m pytest`.
+
+
+## to install:
+```bash
+
+python3 -m venv .venv
+source .venv/bin/activate        # after this, `python` works too
+pip install -r requirements.txt
+./build_mac.sh
+
+```
